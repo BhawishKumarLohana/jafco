@@ -1,6 +1,7 @@
 "use client"
 
 import React from 'react';
+import Link from 'next/link';
 
 function Navbar() {
   return (
@@ -15,10 +16,10 @@ function Navbar() {
 
     {/* Right: Navigation Links */}
     <ul className="flex items-center space-x-10 text-xl font-medium text-gray-800 ml-auto">
-      <a href='/project' className="hover:text-blue-600 cursor-pointer" >Project</a>
-      <a href='/about' className="hover:text-blue-600 cursor-pointer">About</a>
-      <a href='/blogs' className="hover:text-blue-600 cursor-pointer">Blogs</a>
-      <a href='/contact' className="hover:text-blue-600 cursor-pointer">Contact us</a>
+      <Link href='/project' className="hover:text-blue-600 cursor-pointer" >Project</Link>
+      <Link href='/about' className="hover:text-blue-600 cursor-pointer">About</Link>
+      <Link href='/blogs' className="hover:text-blue-600 cursor-pointer">Blogs</Link>
+      <Link href='/contact' className="hover:text-blue-600 cursor-pointer">Contact us</Link>
     </ul>
   </nav>
 </header>
