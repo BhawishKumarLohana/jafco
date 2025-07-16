@@ -57,7 +57,7 @@ export default function BuildingBlocks3D() {
         className="text-center mb-16"
       >
         <h2 className="text-4xl font-bold text-[#047857] mb-4">
-          Building Structure
+          Building Structure(Development in Progress)
         </h2>
     </motion.div>
       <Canvas camera={{ position: [5, 4, 6], fov: 50 }} shadows>
