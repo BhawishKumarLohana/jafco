@@ -1,7 +1,9 @@
 "use client";
 
 import React from "react";
-
+import CTA from "../components/CTA";
+import BuildingBlockLeft from "../components/buildBlockLeft";
+import BuildingBlockRight from "../components/buildBlockRight";
 const projects = [
   {
     title: "JAFCO Heights",
@@ -36,56 +38,46 @@ export default function ProjectsPage() {
         </div>
       </section>
 
-      {/* Projects Grid */}
-      <section className="py-20 px-6 bg-gray-50">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-3 gap-10">
-            {projects.map((project, index) => (
-              <div
-                key={index}
-                className="bg-white border border-gray-200 rounded-xl shadow hover:shadow-lg transition"
-              >
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-56 object-cover rounded-t-xl"
-                />
-                <div className="p-6 space-y-2">
-                  <h3 className="text-2xl font-bold text-emerald-900">{project.title}</h3>
-                  <p className="text-sm text-gray-600">{project.location}</p>
-                  <span
-                    className={`inline-block mt-2 px-3 py-1 text-xs font-semibold rounded-full ${
-                      project.status === "Completed"
-                        ? "bg-green-100 text-green-800"
-                        : project.status === "Under Construction"
-                        ? "bg-yellow-100 text-yellow-800"
-                        : "bg-gray-100 text-gray-800"
-                    }`}
-                  >
-                    {project.status}
-                  </span>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
+      {/* Projects*/}
+      <BuildingBlockLeft 
+      image="/Parking.jpg"
+          title="Project A"
+          subtitle="Campus Park Infrastructure"
+          description="Seamlessly integrated parking and pedestrian zones designed to optimize flow, enhance safety, and ensure a smooth arrival experience for residents and visitors."
+          note="(design in progress)"
+      
+      />
+      <BuildingBlockRight 
+      image="/Parking.jpg"
+          title="Project B"
+          subtitle="Campus Park Infrastructure"
+          description="Seamlessly integrated parking and pedestrian zones designed to optimize flow, enhance safety, and ensure a smooth arrival experience for residents and visitors."
+          note="(design in progress)"
+      
+      
+      />
+      <BuildingBlockLeft 
+      image="/Parking.jpg"
+          title="Project C"
+          subtitle="Campus Park Infrastructure"
+          description="Seamlessly integrated parking and pedestrian zones designed to optimize flow, enhance safety, and ensure a smooth arrival experience for residents and visitors."
+          note="(design in progress)"
+      
+      
+      />
+      
+      
+
+
+      {/* CTA */}
+      <section>
+        <CTA/>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 bg-emerald-900 text-center text-white px-6">
-        <div className="max-w-3xl mx-auto">
-          <h2 className="text-4xl font-bold text-yellow-400 mb-4">Explore Future Opportunities</h2>
-          <p className="text-lg text-gray-200 mb-8">
-            Discover investment-ready plots and upcoming developments across Karachi and beyond.
-          </p>
-          <a
-            href="/contact"
-            className="px-6 py-3 bg-yellow-400 text-emerald-900 font-semibold rounded hover:bg-yellow-300 transition"
-          >
-            Contact Our Team
-          </a>
-        </div>
-      </section>
+
+     
+
+     
     </div>
   );
 }
