@@ -6,6 +6,8 @@ import BuildingBlockLeft from "@/app/components/buildBlockLeft";
 import BuildingBlockRight from "@/app/components/buildBlockRight"
 import StatsSectionPakistan from "@/app/components/StatsSectionPakistan"
 import Footer from "./components/Footer";
+import { motion } from "framer-motion";
+
 
 export default function Home() {
   return (
@@ -14,6 +16,22 @@ export default function Home() {
       
       <main>
         <ZoomFramer />
+        <motion.section
+          initial={{ opacity: 0, y: 100, filter: "blur(10px) scale(0.98)" }}
+          whileInView={{ 
+            opacity: 1, 
+            y: 0, 
+            filter: "blur(0px) scale(1)" 
+          }}
+          transition={{ 
+            duration: 1.4, 
+            ease: [0.22, 1, 0.36, 1], 
+            delay: 0.2 
+          }}
+          viewport={{ once: true, amount: 0.6 }}
+        >
+          <StatsSectionPakistan />
+        </motion.section>
 
         <section>
           <AboutBrief />
@@ -35,13 +53,14 @@ export default function Home() {
 
 
           <BuildingBlockRight
-            image="/Room.png"
+            image="/Parking.jpg"
             title="Refined Living Spaces"
             subtitle="Elevated Comfort & Privacy"
             description="Immerse yourself in thoughtfully designed rooms that blend modern aesthetics with functionality — offering unmatched privacy, natural light, and elevated everyday living."
             note="(under development)"
           />
-          <StatsSectionPakistan/>
+        
+
 
         </section>
         <section>

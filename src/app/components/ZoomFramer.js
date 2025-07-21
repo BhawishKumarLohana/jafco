@@ -4,17 +4,19 @@ import { motion } from "framer-motion";
 export default function ZoomFramer() {
   return (
     <div className="relative h-screen w-screen bg-black overflow-hidden">
-      {/* Zooming Image */}
-      <motion.img
-        src="/building.png"
-        alt="Zoom Building"
-        initial={{ scale: 1 }}
-        animate={{ scale: 1.5 }}
-        transition={{ duration: 5, ease: "easeInOut" }}
-        className="w-full h-full object-cover"
-      />
+      {/* Background Video */}
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        className="absolute w-full h-full object-cover"
+      >
+        <source src="/video3d.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
 
-      {/* Overlay */}
+      {/* Overlay for dark filter */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 0.6 }}
@@ -22,30 +24,29 @@ export default function ZoomFramer() {
         className="absolute inset-0 bg-black"
       />
 
-      {/* Animated Text */}
-      <motion.div
-  initial={{ opacity: 0, y: 40 }}
-  animate={{ opacity: 1, y: 0 }}
-  transition={{ delay: 3.5, duration: 1 }}
-  className="absolute inset-0 flex flex-col items-center justify-center px-4 text-center"
+      {/* Animated Logo + Button */}
+<motion.div
+  initial={{ opacity: 0, y: 60, scale: 0.8 }}
+  animate={{ opacity: 1, y: 0, scale: 1 }}
+  transition={{ delay: 3.2, duration: 1.4, ease: [0.22, 1, 0.36, 1] }}
+  className="absolute inset-0 flex flex-col items-center justify-center px-4 text-center space-y-6"
 >
-  <h1 className="text-white text-4xl md:text-6xl font-extrabold tracking-wide drop-shadow-lg mb-4">
-    Jafco Mall & Apartments
-  </h1>
+  {/* Logo */}
+  <img
+    src="/logo.png"
+    alt="JAFCO Logo"
+    className="h-28 md:h-40 w-auto drop-shadow-2xl transition-transform"
+  />
 
-  <p
-    className="text-[20px] md:text-[28px] font-medium text-yellow-400"
-    style={{
-      transform: "rotate(-2deg)",
-      textShadow: "1px 1px 2px rgba(0,0,0,0.6)",
-      letterSpacing: "1px",
-      fontFamily: "'Cinzel', serif", // optional: add to _app.tsx or HTML head
-      borderBottom: "2px dotted rgba(255,215,0,0.3)",
-      borderRadius: "50%",
-    }}
+  {/* Button */}
+  <motion.button
+    initial={{ opacity: 0, y: 20 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ delay: 4.6, duration: 1.2, ease: [0.25, 1, 0.5, 1] }}
+    className="mt-4 px-6 py-2 border border-yellow-400 text-yellow-300 hover:bg-yellow-400 hover:text-black font-semibold tracking-wide rounded-full backdrop-blur-sm bg-white/5 transition duration-300"
   >
-    Innovation Beyond Location
-  </p>
+    Find More
+  </motion.button>
 </motion.div>
 
     </div>
