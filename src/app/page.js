@@ -16,22 +16,21 @@ export default function Home() {
       
       <main>
         <ZoomFramer />
+
         <motion.section
-          initial={{ opacity: 0, y: 100, filter: "blur(10px) scale(0.98)" }}
-          whileInView={{ 
-            opacity: 1, 
-            y: 0, 
-            filter: "blur(0px) scale(1)" 
-          }}
-          transition={{ 
-            duration: 1.4, 
-            ease: [0.22, 1, 0.36, 1], 
-            delay: 0.2 
+          initial={{ opacity: 0, y: 100 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{
+            duration: 1.4,
+            ease: [0.22, 1, 0.36, 1],
+            delay: 0.2,
           }}
           viewport={{ once: true, amount: 0.6 }}
+          className="overflow-hidden" // Helps in boundary control
         >
           <StatsSectionPakistan />
         </motion.section>
+
 
         <section>
           <AboutBrief />

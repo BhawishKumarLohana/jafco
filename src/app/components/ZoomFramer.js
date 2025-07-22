@@ -18,11 +18,15 @@ export default function ZoomFramer() {
 
       {/* Overlay for dark filter */}
       <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 0.6 }}
-        transition={{ delay: 2.5, duration: 1.5 }}
-        className="absolute inset-0 bg-black"
-      />
+  initial={{ opacity: 0 }}
+  animate={{ opacity: 0.6 }}
+  transition={{ delay: 2.5, duration: 1.5 }}
+  className="absolute inset-0 bg-black"
+/>
+
+{/* Bottom gradient mask for smooth fade */}
+<div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-b from-transparent to-[#024032] z-20 pointer-events-none" />
+
 
       {/* Animated Logo + Button */}
 <motion.div

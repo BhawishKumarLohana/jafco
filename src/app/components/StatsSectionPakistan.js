@@ -12,8 +12,9 @@ import Counter from "@/app/components/Counter"
 
 export default function StatsSectionPakistan() {
   return (
-    <section className="relative z-10 text-white py-24 px-6 bg-gradient-to-b  from-[#024032] via-[#837e47] to-white">
+    <section className="relative z-30 text-white pt-32 pb-24 px-6 bg-[#024032]">
   <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between">
+
     
     {/* Left Content */}
     <div className="md:w-1/2 space-y-6">
